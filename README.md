@@ -1,6 +1,6 @@
 # Business Process with Constraint
 
-This is a repository containing business processes with constraits.
+This is a repository containing business processes with constraints.
 
 ## Background
 
