@@ -14,7 +14,7 @@ For example, `online-grocery.bpmn` is the business process of an online grocery.
 
 <img src="image/online-grocery-bpmn.png" width="500px">
 
-`online-grocery.md` contains functional and non-functional constraints of the business process. Customer satisfaction and cost are concerned:
+`online-grocery.md` contains functional and non-functional constraints of the business process:
 
 <img src="image/online-grocery-md.png" width="500px">
 
