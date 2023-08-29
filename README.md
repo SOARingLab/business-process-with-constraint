@@ -8,7 +8,7 @@ A business process is a set of activities executed in sequence to achieve a busi
 
 ## Repository
 
-In the `repository` dierctory, each sub-directory holds an business process and its constraints. The business process is stored in `business-process.bpmn`. Since different sets of constraints can be specified in different scenarios, the set of constraints in each scenario is stored in `scenairo-x.md`.
+In the `repository` directory, each sub-directory holds a business process and its constraints. The business process is stored in `business-process.bpmn`. Since different sets of constraints can be specified in different scenarios, the set of constraints in each scenario is stored in `scenairo-x.md`.
 
 For example, `online-grocery` holds the business process of an online grocery and its constraints. `business-process.bpmn` contains the business process. When a customer places an order, the online grocery will deliver goods to the customer and receive payment from the customer:
 
