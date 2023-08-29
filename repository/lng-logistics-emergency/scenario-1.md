@@ -1,6 +1,10 @@
 # Introduction
 
-The emergency response process of LNG logistics.
+Natural gas is a kind of clean energy, and liquefied natural gas (LNG) is the most popular form of its transportation. BoYuan is a fictional LNG logistics company in charge of LNG tankers shuttling back and forth in the Bohai Bay, an economically active sea area connecting many provinces and cities (Shandong, Liaoning, Hebei, and Tianjin) in China. However, the Yantai-Dalian route is accident-prone because it crosses busy container routes and connects several fishing grounds. Therefore, it will be a disaster if any accidents happen to an LNG tanker, such as LNG leakage or disposal.
+
+The LNG logistics must be equipped with some safeguards measures, mainly represented as various emergency plans (aka business processes). An emergency plan cannot cover all possible situations. Taking BoYuan's case as an example, the execution of emergency response depends on many factors, including location of leak, amount of leak, state of tanker, ships nearby, and weather, etc., resulting in a significant number of factor combinations. A specific variant seldom happens. Due to cost constraints, making plans for all these combinations in advance is impossible. Once a particular accident happens, it needs an immediate response.
+
+All responses must comply with a series of regulations assigned by authorities. The regulations are expressed as the following constraints.
 
 # Functional Constraint
 
