@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" id="Definitions_0g50tzx" targetNamespace="http://bpmn.io/schema/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="9.0.1">
+  <bpmn:collaboration id="Collaboration_07s3baf">
+    <bpmn:participant id="Participant_09xkvqe" name="Registered actor" processRef="Process_1" />
+    <bpmn:participant id="Participant_0ukgoyg" name="Social Network" processRef="Process_0pskjo4" />
+    <bpmn:messageFlow id="MessageFlow_0jf5wz1" sourceRef="Task_1o6xmdq" targetRef="StartEvent_101hpek" />
+    <bpmn:messageFlow id="MessageFlow_1gmnz1y" sourceRef="Task_0nhn29r" targetRef="Task_0tpasu5" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_1" isExecutable="true">
+    <bpmn:userTask id="Task_1o6xmdq" name="Publish alternatives, broadcast Poll invitation" />
+    <bpmn:serviceTask id="Task_0tpasu5" name="Collect poll results" />
+    <bpmn:endEvent id="EndEvent_1bgajac">
+      <bpmn:incoming>SequenceFlow_15apveh</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:task id="Task_0atbnje" name="Close the poll, and Publish winning option">
+      <bpmn:incoming>SequenceFlow_161am6z</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_15apveh</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:boundaryEvent id="BoundaryEvent_09f5ifv" attachedToRef="Task_0tpasu5">
+      <bpmn:outgoing>SequenceFlow_161am6z</bpmn:outgoing>
+      <bpmn:timerEventDefinition />
+    </bpmn:boundaryEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_15apveh" sourceRef="Task_0atbnje" targetRef="EndEvent_1bgajac" />
+    <bpmn:sequenceFlow id="SequenceFlow_161am6z" sourceRef="BoundaryEvent_09f5ifv" targetRef="Task_0atbnje" />
+  </bpmn:process>
+  <bpmn:process id="Process_0pskjo4" isExecutable="false">
+    <bpmn:startEvent id="StartEvent_101hpek">
+      <bpmn:outgoing>SequenceFlow_0xppl8t</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:userTask id="Task_0nhn29r" name="Participate on the poll">
+      <bpmn:incoming>SequenceFlow_0xppl8t</bpmn:incoming>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_0xppl8t" sourceRef="StartEvent_101hpek" targetRef="Task_0nhn29r" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_07s3baf">
+      <bpmndi:BPMNShape id="Participant_09xkvqe_di" bpmnElement="Participant_09xkvqe" isHorizontal="true">
+        <dc:Bounds x="160" y="78" width="600" height="250" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_15apveh_di" bpmnElement="SequenceFlow_15apveh">
+        <di:waypoint x="647" y="191" />
+        <di:waypoint x="700" y="191" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_161am6z_di" bpmnElement="SequenceFlow_161am6z">
+        <di:waypoint x="494" y="191" />
+        <di:waypoint x="547" y="191" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_0r7rr1d_di" bpmnElement="Task_1o6xmdq">
+        <dc:Bounds x="230" y="151" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1ba5hnm_di" bpmnElement="Task_0tpasu5">
+        <dc:Bounds x="376" y="151" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_1bgajac_di" bpmnElement="EndEvent_1bgajac">
+        <dc:Bounds x="700" y="173" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_0atbnje_di" bpmnElement="Task_0atbnje">
+        <dc:Bounds x="547" y="151" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BoundaryEvent_02ycxw2_di" bpmnElement="BoundaryEvent_09f5ifv">
+        <dc:Bounds x="458" y="173" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_0ukgoyg_di" bpmnElement="Participant_0ukgoyg" isHorizontal="true">
+        <dc:Bounds x="160" y="372" width="600" height="250" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0xppl8t_di" bpmnElement="SequenceFlow_0xppl8t">
+        <di:waypoint x="291" y="490" />
+        <di:waypoint x="376" y="490" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="StartEvent_101hpek_di" bpmnElement="StartEvent_101hpek">
+        <dc:Bounds x="255" y="472" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_1r7lgtp_di" bpmnElement="Task_0nhn29r">
+        <dc:Bounds x="376" y="450" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="MessageFlow_0jf5wz1_di" bpmnElement="MessageFlow_0jf5wz1">
+        <di:waypoint x="273" y="231" />
+        <di:waypoint x="273" y="472" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MessageFlow_1gmnz1y_di" bpmnElement="MessageFlow_1gmnz1y">
+        <di:waypoint x="426" y="450" />
+        <di:waypoint x="426" y="231" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

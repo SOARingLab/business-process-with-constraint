@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0wrzks4" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.2.0">
+  <bpmn:process id="Process_12cgadl" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="coffe grinder activated">
+      <bpmn:outgoing>Flow_19arjh6</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_0kudk6c" />
+    </bpmn:startEvent>
+    <bpmn:exclusiveGateway id="Gateway_0hj379r">
+      <bpmn:incoming>Flow_19arjh6</bpmn:incoming>
+      <bpmn:outgoing>Flow_07jrnlt</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1scjkyo</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_19arjh6" sourceRef="StartEvent_1" targetRef="Gateway_0hj379r" />
+    <bpmn:sequenceFlow id="Flow_07jrnlt" name="#User = authenticated" sourceRef="Gateway_0hj379r" targetRef="Activity_0ypzwp0" />
+    <bpmn:exclusiveGateway id="Gateway_076x5jd">
+      <bpmn:incoming>Flow_07s418r</bpmn:incoming>
+      <bpmn:incoming>Flow_1scjkyo</bpmn:incoming>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_07s418r" sourceRef="Activity_0ypzwp0" targetRef="Gateway_076x5jd" />
+    <bpmn:sequenceFlow id="Flow_1scjkyo" name="DEFAULT" sourceRef="Gateway_0hj379r" targetRef="Gateway_076x5jd" />
+    <bpmn:serviceTask id="Activity_0ypzwp0" name="get coffe">
+      <bpmn:incoming>Flow_07jrnlt</bpmn:incoming>
+      <bpmn:outgoing>Flow_07s418r</bpmn:outgoing>
+      <bpmn:property id="Property_0rz4t2c" name="__targetRef_placeholder" />
+      <bpmn:dataInputAssociation id="DataInputAssociation_1ywdvfg">
+        <bpmn:sourceRef>DataObjectReference_1jr2rwu</bpmn:sourceRef>
+        <bpmn:targetRef>Property_0rz4t2c</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_19onm7s">
+        <bpmn:targetRef>DataObjectReference_0r0ze9x</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:serviceTask>
+    <bpmn:dataObjectReference id="DataObjectReference_1jr2rwu" name="User [authenticated]" dataObjectRef="DataObject_0ahd1m9" />
+    <bpmn:dataObject id="DataObject_0ahd1m9" />
+    <bpmn:dataObjectReference id="DataObjectReference_0r0ze9x" name="User [approved]" dataObjectRef="DataObject_048y20c" />
+    <bpmn:dataObject id="DataObject_048y20c" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_12cgadl">
+      <bpmndi:BPMNEdge id="Flow_19arjh6_di" bpmnElement="Flow_19arjh6">
+        <di:waypoint x="228" y="220" />
+        <di:waypoint x="285" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_07jrnlt_di" bpmnElement="Flow_07jrnlt">
+        <di:waypoint x="335" y="220" />
+        <di:waypoint x="420" y="220" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="326" y="226" width="67" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_07s418r_di" bpmnElement="Flow_07s418r">
+        <di:waypoint x="520" y="220" />
+        <di:waypoint x="595" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1scjkyo_di" bpmnElement="Flow_1scjkyo">
+        <di:waypoint x="310" y="245" />
+        <di:waypoint x="310" y="300" />
+        <di:waypoint x="620" y="300" />
+        <di:waypoint x="620" y="245" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="441" y="282" width="49" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_041ieh0_di" bpmnElement="StartEvent_1">
+        <dc:Bounds x="192" y="202" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="179" y="245" width="63" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0hj379r_di" bpmnElement="Gateway_0hj379r" isMarkerVisible="true">
+        <dc:Bounds x="285" y="195" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataObjectReference_1jr2rwu_di" bpmnElement="DataObjectReference_1jr2rwu">
+        <dc:Bounds x="342" y="85" width="36" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="324" y="142" width="73" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataObjectReference_0r0ze9x_di" bpmnElement="DataObjectReference_0r0ze9x">
+        <dc:Bounds x="522" y="85" width="36" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="501" y="142" width="79" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_076x5jd_di" bpmnElement="Gateway_076x5jd" isMarkerVisible="true">
+        <dc:Bounds x="595" y="195" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0z6lm5h_di" bpmnElement="Activity_0ypzwp0">
+        <dc:Bounds x="420" y="180" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="DataInputAssociation_1ywdvfg_di" bpmnElement="DataInputAssociation_1ywdvfg">
+        <di:waypoint x="378" y="125" />
+        <di:waypoint x="446" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_19onm7s_di" bpmnElement="DataOutputAssociation_19onm7s">
+        <di:waypoint x="497" y="180" />
+        <di:waypoint x="528" y="135" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
