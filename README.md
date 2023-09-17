@@ -26,9 +26,7 @@ In the `Non-functional Constraint` section, the constraints on KPIs are describe
 
 ## Source of Business Process
 
-We have incorporated the business processes from RePROSitory (https://pros.unicam.it:4200/index). We are classifying these business processes into categories. The `category` directory holds the classified business processes. The `unclassified` directory holds the business processes yet to be classified.
-
-Progress of classification: 200/600.
+We have incorporated the business processes from RePROSitory (https://pros.unicam.it:4200/index). We are classifying these business processes into categories. The `category` directory holds the classified business processes.
 
 ## Call for Contribution
 
